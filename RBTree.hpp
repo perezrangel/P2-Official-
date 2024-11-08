@@ -1,3 +1,11 @@
+//==============================================================
+// Names: Aisha Barry, Amaya Joshi, Omar Perez
+// Class: CS 271-01
+// Date: 11/07/2024
+// About: RBTree.hpp contains the declarations of the RBTree 
+// class.
+//==============================================================
+
 #ifndef RBTREE_HPP
 #define RBTREE_HPP
 
