@@ -7,9 +7,29 @@
 //==============================================================
 #include "BST.hpp"
 
+/*
+Constructor
+Initializes an empty Binary Search Tree with a null root and a node count of zero.
+
+Parameters: None
+
+Return value: None
+*/
 template <typename T>
 BST<T>::BST() : root(nullptr), nodeCount(0) {}
 
+
+
+/*
+Copy Constructor
+Creates a deep copy of the given Binary Search Tree by duplicating all nodes 
+and setting the node count to match the original tree.
+
+Parameters:
+- other: The BST object to be copied.
+
+Return value: None
+*/
 template <typename T>
 BST<T>::BST(const BST<T>& other) : root(nullptr), nodeCount(0) {
     copyTree(this->root, other.root);
