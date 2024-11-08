@@ -1,4 +1,18 @@
+//==============================================================
+// Names: Aisha Barry, Amaya Joshi, Omar Perez
+// Class: CS 271-01
+// Date: 11/07/2024
+// About: RBTree.cpp contains the implementations for
+// the RBTree class. Handling tree-wide structure and management
+//==============================================================
+
 #include "RBTree.hpp"
+#include "customexceptions.hpp"
+#include <iostream>
+#include <stdlib.h>
+#include <stdexcept>
+using namespace std;
+
 /*
 Default Constructor
 Initializes an empty Red-Black Tree with a sentinel NIL node.
@@ -46,6 +60,14 @@ RBTree<T>::~RBTree() {
     delete nil;
 }
 
+//========================================================
+// Destructor
+// Aisha Barry
+// Deletes all nodes in the subtree rooted at this node to
+// ensure memory leakage does not happen
+// Parameters: none
+// Return value: none
+//========================================================
 template <typename T>
 RBTree<T>& RBTree<T>::operator=(const RBTree<T>& other) {
     if (this != &other) {
@@ -283,12 +305,28 @@ void RBTree<T>::transplant(RBTreeNode<T>* u, RBTreeNode<T>* v) {
 }
 
 
-
+//==============================================================
+// isEmpty
+// Aisha Barry
+// This function determines if the RBT is empty in constant 
+// time
+// PARAMETERS: None
+// Return value: True if the root is a null pointer, otherwise
+// false
+//==============================================================
 template <typename T>
 bool RBTree<T>::isEmpty() const {
     return root == nil;
 }
 
+//==============================================================
+// size
+// Aisha Barry
+// This function returns the number of nodes in the RBT in
+// constant time
+// PARAMETERS: None
+// Return value: The total number of nodes in the tree
+//==============================================================
 template <typename T>
 long RBTree<T>::size() const {
     return nodeCount;
@@ -327,6 +365,16 @@ RBTreeNode<T>* RBTree<T>::insert(T value) {
     return z;
 }
 
+//==============================================================
+// remove
+// Aisha Barry
+// This function removes a node with the specified value from
+// the RBT making appropriate exceptions for some cases. After
+// removal, if a black node was deleted, it rebalances the tree
+// to maintain Red-Black properties.
+// PARAMETERS: the value of the node to be removed
+// Return value: None
+//==============================================================
 template <typename T>
 void RBTree<T>::remove(T value) {
     RBTreeNode<T>* z = search(value);
@@ -401,17 +449,15 @@ RBTreeNode<T>* RBTree<T>::search(T value) const {
     return x;
 }
 
-/*
-treeMin
-Finds and returns the node with the minimum value in the Red-Black Tree.
-Traverses the tree starting from the root, moving left until the leftmost node 
-is reached.
-
-Parameters: None
-
-Return value:
-A pointer to the node containing the minimum value in the tree.
-*/
+//==============================================================
+// treeMin
+// Aisha Barry
+// This function finds and returns a pointer to the node with the 
+// minimum value in the RBT throwing exception if empty.
+// PARAMETERS: None
+// Return value: Pointer to the node with the minimum value in 
+// the tree
+//==============================================================
 template <typename T>
 RBTreeNode<T>* RBTree<T>::treeMin() const {
     if (isEmpty()) {
@@ -446,6 +492,14 @@ void RBTree<T>::printPreOrder(RBTreeNode<T>* node) const {
     }
 }
 
+//==============================================================
+// printInOrderTraversal
+// Aisha Barry
+// This function prints the values of the nodes in the RBT in
+// ascending order using in-order traversal.
+// PARAMETERS: None
+// Return value: None
+//==============================================================
 template <typename T>
 void RBTree<T>::printInOrder(RBTreeNode<T>* node) const {
     if (node != nil) {
