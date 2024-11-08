@@ -1,3 +1,11 @@
+//==============================================================
+// Names: Aisha Barry, Amaya Joshi, Omar Perez
+// Class: CS 271-01
+// Date: 11/07/2024
+// About: BSTNode.hpp contains the declarations of the BSTNode 
+// class 
+//==============================================================
+
 #ifndef BSTNODE_HPP
 #define BSTNODE_HPP
 
