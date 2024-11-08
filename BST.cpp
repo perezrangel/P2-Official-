@@ -82,6 +82,17 @@ void BST<T>::destroyTree(BSTNode<T>* node) {
 }
 
 // Helper functions to print traversals
+/*
+printPreOrder
+Helper function that performs a pre-order traversal starting from the given node
+and prints each node’s data in pre-order sequence (current node, left subtree, 
+right subtree).
+
+Parameters:
+node
+
+Return value: None
+*/
 template <typename T>
 void BST<T>::printPreOrder(BSTNode<T>* node) const {
     if (node != nullptr) {
