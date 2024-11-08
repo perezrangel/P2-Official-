@@ -1,9 +1,26 @@
 #include "RBTreeNode.hpp"
 
+
+/*
+Constructor
+Omar Perez
+Creates node in the subtree rooted at this node 
+Parameters: None
+Return value: None
+*/
 template <typename T>
 RBTreeNode<T>::RBTreeNode()
     : data(T()), left(nullptr), right(nullptr), parent(nullptr), color(RED) {}
 
+
+
+/*
+Copy Constructor
+Omar Perez
+do this later
+Parameters: None
+Return value: None
+*/
 template <typename T>
 RBTreeNode<T>::RBTreeNode(const RBTreeNode<T>& other)
     : data(other.data), left(nullptr), right(nullptr), parent(nullptr), color(other.color) {
@@ -16,6 +33,7 @@ RBTreeNode<T>::RBTreeNode(const RBTreeNode<T>& other)
         right->parent = this;
     }
 }
+
 
 template <typename T>
 RBTreeNode<T>& RBTreeNode<T>::operator=(const RBTreeNode<T>& other) {
@@ -48,6 +66,16 @@ RBTreeNode<T>& RBTreeNode<T>::operator=(const RBTreeNode<T>& other) {
     return *this;
 }
 
+
+
+/*
+treeMin
+Omar Perez
+This function returns a pointer to the node with the minimal value 
+on the tree rooted at 'this'
+Parameters:
+Return Value: pointer to node
+*/
 template <typename T>
 RBTreeNode<T>* RBTreeNode<T>::treeMin() {
     RBTreeNode<T>* current = this;
@@ -66,6 +94,15 @@ RBTreeNode<T>* RBTreeNode<T>::treeMax() {
     return current;
 }
 
+
+/*
+printPreOrderTraversal
+Omar Perez
+This method prints the stdout of the pre-order traversal for the subtree 
+that starts at this node.
+Parameters: None
+Return value: None
+*/
 template <typename T>
 void RBTreeNode<T>::printPreOrderTraversal() const {
     cout << data << " ";
