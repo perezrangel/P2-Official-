@@ -3,9 +3,15 @@
 // Class: CS 271-01
 // Date: 11/07/2024
 // About: BST.cpp contains the implementations for
-// the BST class. Handling tree-wide structure and management
+// the BST class. Handling tree-wide structure and management.
 //==============================================================
+
 #include "BST.hpp"
+#include <stdlib.h>
+#include "BST.hpp"
+#include "customexceptions.hpp"
+#include <stdexcept>
+using namespace std;
 
 /*
 Constructor
@@ -102,6 +108,14 @@ void BST<T>::printPreOrder(BSTNode<T>* node) const {
     }
 }
 
+//========================================================
+// printInOrderTraversal
+// Aisha Barry
+// This function prints to stdout the inorder traversal
+// of the tree. 
+// PARAMETERS: None
+// Return value: None
+//========================================================
 template <typename T>
 void BST<T>::printInOrder(BSTNode<T>* node) const {
     if (node != nullptr) {
@@ -136,11 +150,26 @@ void BST<T>::transplant(BSTNode<T>* oldNode, BSTNode<T>* newNode) {
     }
 }
 
+//==============================================================
+// isEmpty
+// Aisha Barry
+// This function determines if the tree is empty in constant time 
+// PARAMETERS: None
+// Return value: True or False if the root is a null pointer
+//==============================================================
 template <typename T>
 bool BST<T>::isEmpty() const {
     return root == nullptr;
 }
 
+//==============================================================
+// size
+// Aisha Barry
+// This function determines the number of nodes in the tree in
+// constant time.
+// PARAMETERS: None
+// Return value: the size of the tree
+//==============================================================
 template <typename T>
 long BST<T>::size() const {
     return nodeCount;
@@ -193,7 +222,15 @@ BSTNode<T>* BST<T>::insert(T value) {
 
 
 
-
+//==============================================================
+// remove
+// Aisha Barry
+// This function removes a node with the specified value from
+// the binary search tree. It throws the appropriate exceptions
+// if the tree is empty or the value is not in the tree.
+// PARAMETERS: The value of the node to be removed
+// Return value: None
+//==============================================================
 template <typename T>
 void BST<T>::remove(T value) {
     BSTNode<T>* z = search(value);
@@ -253,6 +290,16 @@ BSTNode<T>* BST<T>::search(T value) const {
     return x;
 }
 
+//========================================================
+// treeMin
+// Aisha Barry
+// This function finds and returns a pointer to the node 
+// with the minimum value in the binary search tree. If 
+// the tree is empty, it throws an EmptyTreeException.
+// PARAMETERS: None
+// Return value: Pointer to the node with the minimum
+// value
+//========================================================
 template <typename T>
 BSTNode<T>* BST<T>::treeMin() const {
     if (isEmpty()) {
