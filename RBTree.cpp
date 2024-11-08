@@ -1,5 +1,13 @@
 #include "RBTree.hpp"
+/*
+Default Constructor
+Initializes an empty Red-Black Tree with a sentinel NIL node.
+The root is set to NIL, and the node count is initialized to zero.
 
+Parameters: None
+
+Return value: None
+*/
 template <typename T>
 RBTree<T>::RBTree() : root(nullptr), nodeCount(0) {
     // Initialize the NIL sentinel node
@@ -11,6 +19,17 @@ RBTree<T>::RBTree() : root(nullptr), nodeCount(0) {
     root = nil;
 }
 
+
+/*
+Copy Constructor
+Creates a deep copy of the given Red-Black Tree, including a duplicate NIL node 
+and all nodes in the original tree.
+
+Parameters:
+- other: The RBTree object to be copied.
+
+Return value: None
+*/
 template <typename T>
 RBTree<T>::RBTree(const RBTree<T>& other) : root(nullptr), nodeCount(0) {
     // Initialize the NIL sentinel node
