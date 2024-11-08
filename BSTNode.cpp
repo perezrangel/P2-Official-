@@ -5,8 +5,10 @@
 // About: BSTNode.cpp includes implementations for the BSTNode 
 // class
 //==============================================================
-#include "BSTNode.hpp"
 
+#include "BSTNode.hpp"
+#include <iostream>
+using namespace std;
 
 /*
 Constructor
@@ -42,6 +44,14 @@ BSTNode<T>::BSTNode(const BSTNode<T>& other) : data(other.data), left(nullptr), 
 }
 
 
+//========================================================
+// Destructor
+// Aisha Barry
+// Deletes all nodes in the subtree rooted at this node to
+// ensure memory leakage does not happen
+// Parameters: none
+// Return value: none
+//========================================================
 template <typename T>
 BSTNode<T>& BSTNode<T>::operator=(const BSTNode<T>& other) {
     if (this != &other) {
@@ -119,6 +129,14 @@ void BSTNode<T>::printPreOrderTraversal() const {
         right->printPreOrderTraversal();
 }
 
+//==============================================================
+// printInOrderTraversal
+// Aisha Barry
+// This method prints to stdout the inorder traversal of the tree 
+// rooted at this.
+// PARAMETERS: None
+// RETURN VALUE: None 
+//==============================================================
 template <typename T>
 void BSTNode<T>::printInOrderTraversal() const {
     if (left)
