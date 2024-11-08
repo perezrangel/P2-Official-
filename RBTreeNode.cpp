@@ -1,5 +1,14 @@
-#include "RBTreeNode.hpp"
+//==============================================================
+// Names: Aisha Barry, Amaya Joshi, Omar Perez
+// Class: CS 271-01
+// Date:11/07/2024
+// About: RBTreeNode.cpp includes implementations for the 
+// RBTreeNode class
+//==============================================================
 
+#include "RBTreeNode.hpp"
+#include <iostream>
+using namespace std;
 
 /*
 Constructor
@@ -35,6 +44,14 @@ RBTreeNode<T>::RBTreeNode(const RBTreeNode<T>& other)
 }
 
 
+//==============================================================
+// Destructor
+// Aisha Barry
+// This destructor recursively deletes all nodes in the subtree 
+// rooted at this node to prevent memory leaks.
+// PARAMETERS: None
+// Return value: None
+//==============================================================
 template <typename T>
 RBTreeNode<T>& RBTreeNode<T>::operator=(const RBTreeNode<T>& other) {
     if (this != &other) {
@@ -112,6 +129,15 @@ void RBTreeNode<T>::printPreOrderTraversal() const {
         right->printPreOrderTraversal();
 }
 
+//==============================================================
+// printInOrderTraversal
+// Aisha Barry
+// This function prints the values of the nodes in the Red-Black 
+// Tree in ascending order using in-order traversal, starting 
+// from the node on which this function is called.
+// PARAMETERS: None
+// Return value: None
+//==============================================================
 template <typename T>
 void RBTreeNode<T>::printInOrderTraversal() const {
     if (left)
