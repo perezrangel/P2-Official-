@@ -8,7 +8,7 @@
 
 #ifndef RBTREE_HPP
 #define RBTREE_HPP
-
+#include "CustomExceptions.hpp"
 #include "RBTreeNode.hpp"
 #include <iostream>
 #include <exception>
@@ -63,14 +63,6 @@ public:
     void printPreOrderTraversal() const;
     void printInOrderTraversal() const;
     void printPostOrderTraversal() const;
-
-    // Exception class
-    class ValueNotInTreeException : public exception {
-        public:
-            virtual const char* what() const throw() {
-                return "Value not in tree exception";
-            }
-    };
 };
 
 #include "RBTree.cpp" // Include implementation for template class
