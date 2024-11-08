@@ -1,7 +1,7 @@
 #include <iostream>
 #include "BST.hpp"
 #include "RBTree.hpp"
-
+#include "CustomExceptions.hpp"
 using namespace std;
 
 int main() {
