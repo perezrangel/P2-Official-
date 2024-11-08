@@ -1,3 +1,11 @@
+//==============================================================
+// Names: Aisha Barry, Amaya Joshi, Omar Perez
+// Class: CS 271-01
+// Date: 11/07/2024
+// About: BST.hpp contains the declarations of the BST class 
+//==============================================================
+
+
 #ifndef BST_HPP
 #define BST_HPP
 
