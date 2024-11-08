@@ -377,6 +377,18 @@ void RBTree<T>::remove(T value) {
 }
 
 
+/*
+search
+Searches for a node with the specified value in the Red-Black Tree.
+Traverses the tree starting from the root, moving left or right based on comparisons,
+until the node is found or the NIL node is reached.
+
+Parameters:
+value
+
+Return value:
+A pointer to the node containing the specified value if it exists.
+*/
 template <typename T>
 RBTreeNode<T>* RBTree<T>::search(T value) const {
     RBTreeNode<T>* x = root;
@@ -389,6 +401,17 @@ RBTreeNode<T>* RBTree<T>::search(T value) const {
     return x;
 }
 
+/*
+treeMin
+Finds and returns the node with the minimum value in the Red-Black Tree.
+Traverses the tree starting from the root, moving left until the leftmost node 
+is reached.
+
+Parameters: None
+
+Return value:
+A pointer to the node containing the minimum value in the tree.
+*/
 template <typename T>
 RBTreeNode<T>* RBTree<T>::treeMin() const {
     if (isEmpty()) {
